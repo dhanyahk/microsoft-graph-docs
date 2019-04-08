@@ -1,0 +1,16 @@
+
+```CS
+
+GraphServiceClient graphClient = new GraphServiceClient( authProvider );
+
+var services = new BookingService
+{
+	@odata.type = "#microsoft.graph.bookingService",
+	DefaultDuration = "PT30M",
+};
+
+await graphClient.BookingBusinesses["Contosolunchdelivery@M365B489948.onmicrosoft.com"].Services["57da6774-a087-4d69-b0e6-6fb82c339976"]
+	.Request()
+	.UpdateAsync(services);
+
+```
